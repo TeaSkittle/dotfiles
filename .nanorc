@@ -1,0 +1,15 @@
+# Nano Settings
+# See other options in /etc/nanorc
+# In .bashrc: alias nano='nano -w'
+set autoindent
+set linenumbers
+set softwrap
+set mouse
+set nonewlines
+# Colors
+set numbercolor cyan
+set keycolor cyan
+set functioncolor white
+set selectedcolor brightwhite,blue
+set titlecolor brightwhite,magenta
+set statuscolor brightwhite,magenta

@@ -1,6 +1,6 @@
 alias em='emacs -nw'
 alias cc='gcc -Wall -pedantic '
-alias fm='pcmanfm'
+alias ls="ls --color=auto"
 alias nano='nano -w'
 
 extract () {

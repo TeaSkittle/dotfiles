@@ -22,7 +22,6 @@
 		     rainbow-mode
 		     rainbow-delimiters
 		     ;; Themes
-		     doom-themes
 		     leuven-theme
 		     parchment-theme
 		     nofrils-acme-theme
@@ -46,7 +45,7 @@
 ;;    Ricing
 ;; =============
 ;; Set emacs theme
-;; Themes I like manoj-dark, monochrome ,doom-one, leuven, parchment, nofrils-acme
+;; Themes I like manoj-dark, monochrome, leuven, parchment, nofrils-acme
 (load-theme 'nofrils-acme t)
 ;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)

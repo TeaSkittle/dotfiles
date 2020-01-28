@@ -26,6 +26,7 @@
 		     parchment-theme
 		     nofrils-acme-theme
 		     monochrome-theme
+		     cyberpunk-theme
 		     ;; Funciontality
 		     auto-package-update
 		     ))

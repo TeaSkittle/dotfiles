@@ -1,5 +1,4 @@
 alias em='emacs -nw'
-alias cc='gcc -Wall -pedantic '
 alias ls="ls --color=auto"
 alias nano='nano -w'
 
@@ -18,6 +17,18 @@ extract () {
         *.Z)         uncompress $1  ;;
         *.7z)        7z x $1        ;;
         *)     echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+compile () {
+    if [ -f $1 ] ; then
+        case $1 in
+        *.c)        gcc -Wall -pedantic $1      ;;
+        *.java)     javac $1                    ;;
+        *) echo "'$1' cannot be compiled via compile()" ;;
         esac
     else
         echo "'$1' is not a valid file"

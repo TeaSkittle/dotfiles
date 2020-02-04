@@ -1,6 +1,10 @@
+# Open programs with specific paramters
 alias em='emacs -nw'
-alias ls="ls --color=auto"
 alias nano='nano -w'
+
+# Add color to grep and ls
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
 
 extract () {
     if [ -f $1 ] ; then
@@ -26,9 +30,9 @@ extract () {
 compile () {
     if [ -f $1 ] ; then
         case $1 in
-        *.c)      gcc -Wall -pedantic $1      ;;
-        *.java)   javac $1                    ;;
-        *)        echo "'$1' cannot be compiled via compile()" ;;
+        *.c)         gcc -Wall -pedantic $1      ;;
+        *.java)      javac $1                    ;;
+        *)           echo "'$1' cannot be compiled via compile()" ;;
         esac
     else
         echo "'$1' is not a valid file"

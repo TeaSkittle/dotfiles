@@ -21,6 +21,7 @@
 		     markdown-mode
 		     rainbow-mode
 		     rainbow-delimiters
+		     neotree
 		     ;; Themes
 		     leuven-theme
 		     parchment-theme
@@ -46,8 +47,8 @@
 ;;    Ricing
 ;; =============
 ;; Set emacs theme
-;; Themes I like manoj-dark, monochrome, leuven, parchment, nofrils-acme
-(load-theme 'nofrils-acme t)
+;; Themes I like manoj-dark, monochrome ,doom-one, leuven, parchment, nofrils-acme
+(load-theme 'cyberpunk t)
 ;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -81,3 +82,7 @@
 (setq require-final-newline t)
 ;; Delete what is selected when typing
 (delete-selection-mode 1)
+;; neotree
+(add-to-list 'load-path "/some/path/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)

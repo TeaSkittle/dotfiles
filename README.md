@@ -6,4 +6,4 @@ A Simple rice for my Dell Opitplex 9020
 * Terminal Emulator - XTerm
 * File Manager - Xfe
 
-![scrot](scrot.pg)
+![scrot](scrot.png)

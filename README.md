@@ -6,5 +6,6 @@ This is a work in progress.
 * Window Manager - Spectrwm
 * Terminal Emulator - XTerm
 * File Manager - Xfe
+* Text Editor - Emacs
 
 ![scrot](scrot.png)

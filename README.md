@@ -1,6 +1,6 @@
 # OpenBSD dotfiles
 
-A Simple rice for my Dell Optiplex 9020.  
+A simple rice for my Dell Optiplex 9020.  
 This is a work in progress.  
 * OS - OpenBSD
 * Window Manager - Spectrwm

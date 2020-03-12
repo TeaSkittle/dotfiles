@@ -6,7 +6,7 @@ PS1=$
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 export PATH HOME TERM
 alias ls="colorls -G"
-alias cls="clear"
+alias cls='printf "\033[2J\033[H"'
 extract () {
     if [ -f $1 ] ; then
         case $1 in

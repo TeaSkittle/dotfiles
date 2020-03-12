@@ -1,6 +1,3 @@
-# $OpenBSD: dot.profile,v 1.5 2018/02/02 02:29:54 yasuoka Exp $
-#
-# sh/ksh initialization
 # Default PS1: \h\$
 PS1=$
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
@@ -26,5 +23,4 @@ extract () {
     else
         echo "'$1' is not a valid file"
     fi
-}
-   
+}  

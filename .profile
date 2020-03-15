@@ -3,7 +3,12 @@ PS1=$
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
 export PATH HOME TERM
 alias ls="colorls -G"
-alias cls='printf "\033[2J\033[H"'
+alias cls="printf '\033[2J\033[H'"
+
+bind () {
+    man spectrwm | grep "The default bindings" -A 76 | more
+}
+
 extract () {
     if [ -f $1 ] ; then
         case $1 in

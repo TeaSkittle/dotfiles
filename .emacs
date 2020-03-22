@@ -81,6 +81,7 @@
 (setq require-final-newline t)
 ;; Delete what is selected when typing
 (delete-selection-mode 1)
+(global-unset-key (kbd "<insert>"))
 
 ;; ===========
 ;;   neotree

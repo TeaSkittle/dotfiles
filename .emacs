@@ -5,10 +5,6 @@
 ;;    | |  __/ (_| | |  | | (_| | (__\__ \
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
-;;    TeaSkittle's emacs config
-
-;; File located at: %appdata%\Roaming on Win10
-
 ;; =================
 ;;  Package Stuff
 ;; =================
@@ -46,7 +42,6 @@
 ;; =============
 ;;    Ricing
 ;; =============
-;; Themes I like: manoj-dark, cyberpunk, monochrome, leuven, parchment, nofrils-acme
 (load-theme 'cyberpunk t)
 ;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)
@@ -61,8 +56,6 @@
 (fringe-mode 10)
 ;; Colored parenthesis
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-;; Enable word wrapping, better readability
-(global-visual-line-mode 1)
 
 ;; ============
 ;;   Editing
@@ -81,7 +74,10 @@
 (setq require-final-newline t)
 ;; Delete what is selected when typing
 (delete-selection-mode 1)
+;; Disable insert key for overwrite-mode
 (global-unset-key (kbd "<insert>"))
+;; Enable word wrapping, better readability
+(global-visual-line-mode 1)
 
 ;; ===========
 ;;   neotree

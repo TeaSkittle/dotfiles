@@ -5,6 +5,10 @@
 ;;    | |  __/ (_| | |  | | (_| | (__\__ \
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
+;;    TeaSkittle's emacs config
+
+;; File located at: %appdata%\Roaming on Win10
+
 ;; =================
 ;;  Package Stuff
 ;; =================
@@ -16,15 +20,13 @@
 (setq package-list '(;; Modes
 		     markdown-mode
 		     rainbow-mode
-		     ;; Themes
-		     leuven-theme
-		     parchment-theme
-		     nofrils-acme-theme
-		     monochrome-theme
-		     cyberpunk-theme
-		     ;; Funciontality
 		     rainbow-delimiters
 		     neotree
+		     ;; Themes
+		     leuven-theme
+		     cyberpunk-theme
+		     zenburn-theme
+		     ;; Funciontality
 		     auto-package-update
 		     ))
 ;; Activate all the packages
@@ -42,7 +44,9 @@
 ;; =============
 ;;    Ricing
 ;; =============
-(load-theme 'cyberpunk t)
+;; Set emacs theme
+;; Themes I like manoj-dark, monochrome, leuven, parchment, nofrils-acme
+(load-theme 'leuven t)
 ;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -50,13 +54,15 @@
 ;; Remove splash screen, go straight to scratch buffer
 (setq inhibit-splash-screen t)
 ;; Set line & column numbers
-(global-linum-mode 1)
+(global-linum-mode t)
 (setq column-number-mode t)
 ;; Adjust padding
 (fringe-mode 10)
 ;; Colored parenthesis
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
+;; Enable word wrapping, better readability
+(global-visual-line-mode 1)
+(global-unset-key(kbd"<insert>"))
 ;; ============
 ;;   Editing
 ;; ============
@@ -74,14 +80,7 @@
 (setq require-final-newline t)
 ;; Delete what is selected when typing
 (delete-selection-mode 1)
-;; Disable insert key for overwrite-mode
-(global-unset-key (kbd "<insert>"))
-;; Enable word wrapping, better readability
-(global-visual-line-mode 1)
-
-;; ===========
-;;   neotree
-;; ===========
+;; neotree
 (add-to-list 'load-path "/some/path/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)

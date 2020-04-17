@@ -6,9 +6,6 @@
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
 ;;    TeaSkittle's emacs config
-
-;; File located at: %appdata%\Roaming on Win10
-
 ;; =================
 ;;  Package Stuff
 ;; =================
@@ -39,7 +36,6 @@
     (package-install package)))
 ;; Update packages if needed
 (auto-package-update-maybe)
-
 ;; =============
 ;;    Ricing
 ;; =============

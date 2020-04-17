@@ -19,7 +19,6 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (setq package-list '(;; Modes
 		     markdown-mode
-		     rainbow-mode
 		     rainbow-delimiters
 		     neotree
 		     ;; Themes
@@ -45,8 +44,7 @@
 ;;    Ricing
 ;; =============
 ;; Set emacs theme
-;; Themes I like manoj-dark, monochrome, leuven, parchment, nofrils-acme
-(load-theme 'leuven t)
+(load-theme 'cyberpunk t)
 ;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)
 (tool-bar-mode -1)

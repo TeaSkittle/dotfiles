@@ -5,23 +5,21 @@
 ;;    | |  __/ (_| | |  | | (_| | (__\__ \
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
-;;    TeaSkittle's emacs config
 ;; =================
 ;;  Package Stuff
 ;; =================
 (require 'package)
-;; Disable custom comment stuff
 (defun package--save-selected-packages (&rest opt) nil)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (setq package-list '(;; Modes
 		     markdown-mode
+		     rainbow-mode
 		     rainbow-delimiters
 		     neotree
 		     ;; Themes
 		     leuven-theme
 		     cyberpunk-theme
-		     zenburn-theme
 		     ;; Funciontality
 		     auto-package-update
 		     ))
@@ -34,14 +32,11 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
-;; Update packages if needed
 (auto-package-update-maybe)
 ;; =============
 ;;    Ricing
 ;; =============
-;; Set emacs theme
 (load-theme 'cyberpunk t)
-;; Remove certain things, make more TUI like
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -51,17 +46,21 @@
 (global-linum-mode t)
 (setq column-number-mode t)
 ;; Adjust padding
-(fringe-mode 10)
+(fringe-mode 5)
 ;; Colored parenthesis
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; Enable word wrapping, better readability
 (global-visual-line-mode 1)
-(global-unset-key(kbd"<insert>"))
 ;; ============
 ;;   Editing
 ;; ============
+;; Disable insert key crap
+(global-unset-key(kbd"<insert>"))
 ;; Allow copy/paste with system clipboard
 (setq x-select-enable-cliptbaord t)
+;; highlight line
+(global-hl-line-mode 1)
+(set-face-background 'hl-line "midnight blue")
 ;; Enable selection highlight w/ C-SPC
 (setq transient-mark-mode t)
 ;; Disable bell

@@ -1,3 +1,3 @@
-feh --bg-fill ~/lain.jpg
+feh --bg-fill ~/wall.png
 exec spectrwm
 

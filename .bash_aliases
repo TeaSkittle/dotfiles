@@ -1,9 +1,11 @@
-# Default PS1: \h\$
-PS1=$
-PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games
-export PATH HOME TERM
-alias ls="colorls -G"
+alias ls="ls --color=auto"
 alias cls="printf '\033[2J\033[H'"
+alias i="sudo apt-get install"
+alias r="sudo apt-get remove"
+alias u="sudo apt-get update"
+alias p="sudo poweroff"
+alias b="sudo reboot"
+alias em="emacs -nw"
 
 bind () {
     man spectrwm | grep "The default bindings" -A 76 | more

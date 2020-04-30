@@ -14,6 +14,7 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (setq package-list '(;; Modes
 		     markdown-mode
+		     lua-mode
 		     rainbow-delimiters
 		     neotree
 		     ;; Themes

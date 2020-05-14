@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 apt-get install make build-essential libxft-dev \
 libx11-dev libncurses-dev apt-file emacs feh scrot tldr \
-pandoc tilix fish joe neofetch
+pandoc tilix fish joe neofetch stow
 
 chsh -s /usr/bin/fish

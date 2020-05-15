@@ -1,12 +1,16 @@
 #!/usr/bin/sh
 
-# Packages
+# Install packages
+apt-get install - y \
+
 # Build packages
-apt-get install make build-essential libxft-dev libx11-dev libncurses-dev  \
+make build-essential libxft-dev libx11-dev libncurses-dev \
+
 # Tools
-apt-file stow net-tools whois pandoc feh scrot tldr \
-# Apps
-emacs tilix fish joe neofetch 
+apt-file stow net-tools whois pandoc feh scrot tldr neofetch \
+
+# Desktop Environment
+spectrwm emacs tilix fish joe  
 
 # Update packages
 apt-get update

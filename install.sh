@@ -16,7 +16,6 @@ spectrwm emacs tilix fish joe
 apt-get update
 
 # Move files
-mv wall.png ~/Pictures/wall.png
 mv .gitconfig ~/.gitconfig
 
 # Change shell (doesn't seem to work 100 percent)

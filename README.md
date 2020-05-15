@@ -9,9 +9,6 @@ A simple rice for my Dell Optiplex 9020. _(This is a work in progress)_
 * `Text Editor` - Emacs/jmacs(JOE flavour)
 * `Screen locker` - slock
 
-## Screenshot
-![scrot](scrot.png)
-
 ## Setup
 ```bash
 $ git clone https://github.com/teaskittle/dotfiles.git
@@ -20,3 +17,6 @@ $ sudo sh install.sh
 $ rm install.sh
 $ stow *
 ```
+
+## Screenshot
+![scrot](scrot.png)

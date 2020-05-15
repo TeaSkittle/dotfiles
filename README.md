@@ -18,5 +18,5 @@ $ stow *
 ```
 
 ## Screenshots ( Old )
-![screen1.png](screenshots/screen1.png =100x100)  
-![screen2.png](screenshots/screen2.png =100x100)
+<img src="screenshots/screen1.png" alt="screen1" width="200"/>
+<img src="screenshots/screen2.png" alt="screen2" width="200"/>

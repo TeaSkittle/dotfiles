@@ -11,3 +11,12 @@ A simple rice for my Dell Optiplex 9020. _(This is a work in progress)_
 
 ## Screenshot
 ![scrot](scrot.png)
+
+## Setup
+```bash
+$ git clone https://github.com/teaskittle/dotfiles.git
+$ cd dotfiles
+$ sudo sh install.sh
+$ rm install.sh
+$ stow *
+```

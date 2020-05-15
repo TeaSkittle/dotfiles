@@ -17,6 +17,3 @@ $ sudo sh install.sh
 $ rm install.sh
 $ stow *
 ```
-
-## Screenshot
-![scrot](scrot.png)

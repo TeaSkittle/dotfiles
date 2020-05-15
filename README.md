@@ -18,5 +18,5 @@ $ stow *
 ```
 
 ## Screenshots ( Old )
-![screen1.png](screenshots/screen1.png)  
-![screen2.png](screenshots/screen2.png)
+![screen1.png](screenshots/screen1.png =100x100)  
+![screen2.png](screenshots/screen2.png =100x100)

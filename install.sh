@@ -11,9 +11,15 @@ emacs tilix fish joe neofetch
 # Update packages
 apt-get update
 
-# Copy files
-cp wall.png ~/Pictures/wall.png
-cp .gitconfig ~/.gitconfig
+# Move files
+mv wall.png ~/Pictures/wall.png
+mv .gitconfig ~/.gitconfig
 
 # Change shell (doesn't seem to work 100 percent)
 chsh -s /usr/bin/fish
+
+# Clean up
+rm README.md scrot.png wall.png
+
+# Symlink dotfiles
+stow *

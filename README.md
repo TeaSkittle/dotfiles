@@ -2,12 +2,11 @@
 
 A simple rice for my Dell Optiplex 9020. _(This is a work in progress)_
 
-* `OS` - Debian
-* `Window Manager` - Spectrwm
+* `OS` - ElementaryOS or Debian
+* `Window Manager` - Gala or Spectrwm
 * `Terminal Emulator` - tilix
 * `File Manager` - Xfe
 * `Text Editor` - Emacs/jmacs(JOE flavour)
-* `Screen locker` - slock
 
 ## Setup
 ```bash
@@ -18,6 +17,6 @@ $ rm install.sh
 $ stow *
 ```
 
-## Screenshots
+## Screenshots ( Old )
 ![screen1.png](screenshots/screen1.png)  
 ![screen2.png](screenshots/screen2.png)

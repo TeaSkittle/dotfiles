@@ -20,6 +20,3 @@ chsh -s /usr/bin/fish
 
 # Clean up
 rm README.md scrot.png wall.png
-
-# Symlink dotfiles
-stow *

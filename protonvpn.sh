@@ -5,10 +5,8 @@ sudo pip3 install protonvpn-cli
 echo "Use OpenVPN account setting, not ProtonVPN."
 echo "Log into protonvpn.com to find OpenVPN account and pass"
 sudo protonvpn init
-echo "Connecting to fastest VPN server"
+echo "Connecting to fastest VPN server..."
 sudo protonvpn c -f
-echo "Connection status"
+echo "Connection status:"
 sudo protonvpn status
 echo "use protonvpn --help to see options"
-
-

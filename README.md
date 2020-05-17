@@ -16,7 +16,3 @@ $ sudo sh install.sh
 $ rm install.sh
 $ stow *
 ```
-
-## Screenshots ( Old )
-<img src="screenshots/screen1.png" alt="screen1" width="640"/>
-<img src="screenshots/screen2.png" alt="screen2" width="640"/>

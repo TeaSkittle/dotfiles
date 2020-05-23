@@ -2,13 +2,13 @@
 # Install and setup for Pop!_OS
 
 # Install packages
-apt-get install - y \
+apt install - y \
 
 # Tools
-git stow net-tools whois pandoc scrot tldr neofetch \
+git stow net-tools whois pandoc scrot tldr dos2unix \
 
 # Desktop Environment
-emacs joe fish
+emacs joe fish neofetch
 
 # Update packages
 apt-get update

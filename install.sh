@@ -2,10 +2,12 @@
 #
 # Packages
 #
-echo "[+]Installing packages..."
+echo "[+]Installing system packages..."
 apt install -y \
 git stow net-tools whois pandoc scrot tldr dos2unix \
-emacs joe fish neofetch
+emacs joe fish neofetch python3-pip python3-setuptools
+echo "[+]Installing pip packages"
+pip3 install speedtest-cli
 echo "[+]Updating system..."
 apt update
 #

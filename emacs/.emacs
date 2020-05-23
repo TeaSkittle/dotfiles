@@ -37,6 +37,7 @@
 ;;    Ricing
 ;; =============
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(setq tron-legacy-vivid-cursor t) ;; must be set before theme is loaded
 (load-theme 'tron-legacy t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -52,8 +53,6 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; Enable word wrapping, better readability
 (global-visual-line-mode 1)
-;; tron-legacy-theme
-(setq tron-legacy-vivid-cursor t)
 
 ;; ============
 ;;   Editing

@@ -5,6 +5,7 @@
 ;;    | |  __/ (_| | |  | | (_| | (__\__ \
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
+
 ;; =================
 ;;  Package Stuff
 ;; =================
@@ -14,11 +15,9 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (setq package-list '(;; Modes
 		     markdown-mode
-		     lua-mode
 		     rainbow-delimiters
 		     neotree
 		     ;; Themes
-		     leuven-theme
 		     cyberpunk-theme
 		     ;; Funciontality
 		     auto-package-update
@@ -33,15 +32,17 @@
   (unless (package-installed-p package)
     (package-install package)))
 (auto-package-update-maybe)
+
 ;; =============
 ;;    Ricing
 ;; =============
-(load-theme 'cyberpunk t)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'tron-legacy t)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-;; Remove splash screen, go straight to scratch buffer
-(setq inhibit-splash-screen t)
+;; Remove splash screen, go straight to scratch buffer( set to t)
+(setq inhibit-splash-screen nil)
 ;; Set line & column numbers
 (global-linum-mode t)
 (setq column-number-mode t)
@@ -51,6 +52,9 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; Enable word wrapping, better readability
 (global-visual-line-mode 1)
+;; tron-legacy-theme
+(setq tron-legacy-vivid-cursor t)
+
 ;; ============
 ;;   Editing
 ;; ============

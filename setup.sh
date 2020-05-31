@@ -6,7 +6,7 @@ echo "[+]Installing system packages..."
 apt install -y \
 git stow net-tools whois pandoc scrot tldr dos2unix \
 emacs joe fish neofetch python3-pip python3-setuptools \
-htop vim shellcheck
+htop vim shellcheck surf
 echo "[+]Installing pip packages"
 pip3 install speedtest-cli
 echo "[+]Updating system..."

@@ -27,4 +27,4 @@ echo "[+] Setting fish as default shell..."
 which fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 # Complete
-echo "[+]Set up complete"
+echo "[+] Set up complete"

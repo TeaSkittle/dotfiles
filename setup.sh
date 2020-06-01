@@ -28,5 +28,3 @@ which fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 # Complete
 echo "[+]Set up complete"
-
-

@@ -1,1 +1,20 @@
+% use emacs keybinds
+() = evalfile("emacs");
 LINENUMBERS = 2;
+
+% tabs
+WRAP_INDENTS = 0;
+setkey("self_insert_cmd","^I");
+TAB_DEFAULT = 4;
+USE_TABS = 1;
+TAB = 4;
+Tab_Always_Inserts_Tab = 1;
+
+% enable mouse
+enable_xmouse ();
+
+% highlight region
+HIGHLIGHT = 1;
+
+% add newline if EOF doens't have one
+ADD_NEWLINE = 1;

@@ -1,4 +1,4 @@
-# dotfiles
+# :rice_ball: dotfiles
 
 A simple rice for my Dell Optiplex 9020. _(This is a constant work in progress and is always changing)_
 

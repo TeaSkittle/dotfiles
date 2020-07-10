@@ -1,6 +1,6 @@
-# :rice: dotfiles
+# :rice: Rice
 
-A simple rice for my Dell Optiplex 9020. _(This is a constant work in progress and is always changing)_
+A simple rice/dotfiles repo for my Dell Optiplex 9020. *(This is a constant work in progress and is always changing)*
 
 ## Setup
 ```bash

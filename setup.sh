@@ -11,5 +11,5 @@ apt update
 echo "[+] Setting up config files"
 cp .gitconfig ~/.gitconfig
 f=$(command -v fish | sudo tee -a /etc/shells)
-echo "[-] To change shell to fish: sudo chsh -s $f"
+echo "[-] To change shell to fish: chsh -s $f"
 echo "[+] Set up complete"

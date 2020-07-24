@@ -1,8 +1,11 @@
 # :rice: Rice
 
-A simple rice/dotfiles repo for my Dell Optiplex 9020 running Debian stable. *(This is a constant work in progress and is always changing)* The setup.sh file is meant to be ran after a base install.
+A simple rice/dotfiles repo for my Dell Optiplex 9020 running Debian stable. *(This is a constant work in progress and is always changing)* The setup.sh file is meant to be ran after a base net install.
 
 ## Partitioning Scheme
+
+Nothing to special here, this is the partitioning scheme I use
+
 ```
 /boot - 500M
 /swap - 16G

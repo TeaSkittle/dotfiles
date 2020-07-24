@@ -15,7 +15,7 @@ apt update
 # Configurations
 #
 echo "[+] Moving .gitconfig to home..."
-mv .gitconfig ~/.gitconfig
+cp .gitconfig ~/.gitconfig
 echo "[+] Downloading and moving tron-legacy-theme.el ..."
 curl -LO https://raw.githubusercontent.com/ianpan870102/tron-legacy-emacs-theme/master/tron-legacy-theme.el
 mkdir .emacs.d/themes/

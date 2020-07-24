@@ -6,7 +6,7 @@ echo "[+] Installing system packages..."
 apt install -y \
 git stow net-tools whois pandoc scrot tldr dos2unix \
 emacs joe fish neofetch python3-pip python3-setuptools \
-htop vim shellcheck surf jed
+htop vim shellcheck surf jed firefox spectrwm xorg
 echo "[+] Installing pip packages"
 pip3 install speedtest-cli
 echo "[+] Updating system..."
@@ -24,7 +24,7 @@ mv tron-legacy-theme.el .emacs.d/themes/
 # Fish
 #
 echo "[+] Setting fish as default shell..."
-which fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+f=$(command -v fish | sudo tee -a /etc/shells)
+chsh -s "$f"
 # Complete
 echo "[+] Set up complete"

@@ -16,18 +16,22 @@ A simple rice/dotfiles repo for my Dell Optiplex 9020 running Debian stable. *(T
 Log in a root after base install and run these commands ( replacing what is in all caps )
 
 ```bash
-usermod -aG sudo USERNAME
+usermod -aG sudo USER
+su USER
+cd ~
 git clone https://github.com/teaskittle/dotfiles
-cd dotfiles
+cd dotfiles/
 chmod 775 setup.sh
 sudo ./setup.sh
-stow VIM
+stow APP1 APP2 APPN
 ```
 
-Then edit ~/.xinitrc and add whatver window manager you prefer ( I use spectrwm, the only one setup.sh installs )
+Then edit ~/.xinitrc and add whatever window manager you prefer ( I use spectrwm, the only one setup.sh installs )
 
 ```bash
 #!/bin/sh
-# ~/.xinitrc
+# xinitrc
 exec spectrwm
 ```
+
+Reboot the system and log in as USER and run: `startx`

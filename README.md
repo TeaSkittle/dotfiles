@@ -16,7 +16,7 @@ Nothing to special here, this is the partitioning scheme I use
 
 ## Setup
 
-Log in a root after base install and run these commands ( replacing what is in all caps )
+Log in as root after base install and run these commands ( replacing what is in all caps )
 
 ```bash
 usermod -aG sudo USER

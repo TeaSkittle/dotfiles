@@ -5,7 +5,7 @@
 ;;    | |  __/ (_| | |  | | (_| | (__\__ \
 ;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
 ;;
-
+;;
 ;; =================
 ;;  Package Stuff
 ;; =================
@@ -20,9 +20,7 @@
 		     ;; Themes
 		     cyberpunk-theme
 		     ;; Funciontality
-		     auto-package-update
 		     ))
-;; Activate all the packages
 (package-initialize)
 ;; Fetch the list of packages available 
 (unless package-archive-contents
@@ -31,24 +29,25 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
-(auto-package-update-maybe)
 
 ;; =============
 ;;    Ricing
 ;; =============
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(setq tron-legacy-vivid-cursor t) ;; must be set before theme is loaded
-(load-theme 'tron-legacy t)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+(load-theme 'cyberpunk t)
+
+;; For windows
+;;(toggle-scroll-bar -1)
+;;(tool-bar-mode -1)
+;;(menu-bar-mode -1)
+;; Adjust padding
+;;(fringe-mode 5)
+
 ;; Remove splash screen, go straight to scratch buffer( set to t)
 (setq inhibit-splash-screen nil)
 ;; Set line & column numbers
 (global-linum-mode t)
 (setq column-number-mode t)
-;; Adjust padding
-(fringe-mode 5)
 ;; Colored parenthesis
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 ;; Enable word wrapping, better readability

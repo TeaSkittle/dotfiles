@@ -21,7 +21,7 @@ Log in as root after base install and run these commands ( replacing what is in 
 ```bash
 usermod -aG sudo USER
 su USER
-apt-get install git
+sudo apt-get install git
 cd ~
 git clone https://github.com/teaskittle/dotfiles
 cd dotfiles/

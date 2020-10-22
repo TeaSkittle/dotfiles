@@ -1,83 +1,51 @@
-;;  _______         __  __                
-;; |__   __|       |  \/  |               
-;;    | | ___  __ _| \  / | __ _  ___ ___ 
-;;    | |/ _ \/ _` | |\/| |/ _` |/ __/ __|
-;;    | |  __/ (_| | |  | | (_| | (__\__ \
-;;    |_|\___|\__,_|_|  |_|\__,_|\___|___/
+;; Void Emacs
+;; based off sanemacs
+;; started editing on 9-10-2020
+;; no extra packages, just base emacs
 ;;
-;;
-;; =================
-;;  Package Stuff
-;; =================
-(require 'package)
-(defun package--save-selected-packages (&rest opt) nil)
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
-(setq package-list '(;; Modes
-		     markdown-mode
-		     rainbow-delimiters
-		     neotree
-		     ;; Themes
-		     cyberpunk-theme
-		     ;; Funciontality
-		     ))
-(package-initialize)
-;; Fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
-;; Install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+;; TODO: add custom init.el, move stuff to void emacs folder
 
-;; =============
-;;    Ricing
-;; =============
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'cyberpunk t)
+;; Disable menu-bar, tool-bar, and scroll-bar.
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; For windows
-;;(toggle-scroll-bar -1)
-;;(tool-bar-mode -1)
-;;(menu-bar-mode -1)
-;; Adjust padding
-;;(fringe-mode 5)
+;; Useful defaults
+(setq initial-scratch-message "")          ; Make *scratch* buffer blank
+(setq-default frame-title-format '("%b"))  ; Make window title the buffer name
+(setq ring-bell-function 'ignore)          ; Disable bell sound
+(fset 'yes-or-no-p 'y-or-n-p)              ; y-or-n-p makes answering questions faster
+(show-paren-mode 1)                        ; Show closing parens by default
+(setq linum-format "%4d ")                 ; Line number format
+(display-time-mode 1)                      ; Show current time in mode-line
+(setq initial-scratch-message "")          ; Make *scratch* buffer blank
+(setq-default frame-title-format '("%b"))  ; Make window title the buffer name
+(setq ring-bell-function 'ignore)          ; Disable bell sound
+(fset 'yes-or-no-p 'y-or-n-p)              ; y-or-n-p makes answering questions faster
+(show-paren-mode 1)                        ; Show closing parens by default
+(setq linum-format "%4d ")                 ; Line number format
+(setq require-final-newline t)             ; Add newline at end of file if not there
+(delete-selection-mode 1)                  ; Delete what is selected when typing
+(global-set-key [mouse-3]                  ; Gives right-click a context menu
+		'mouse-popup-menubar-stuff) 
+(add-hook 'prog-mode-hook                  ; Show line numbers in programming modes
+	  (if (and (fboundp 'display-line-numbers-mode) (display-graphic-p))
+              #'display-line-numbers-mode #'linum-mode))
 
-;; Remove splash screen, go straight to scratch buffer( set to t)
-(setq inhibit-splash-screen nil)
-;; Set line & column numbers
-(global-linum-mode t)
-(setq column-number-mode t)
-;; Colored parenthesis
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-;; Enable word wrapping, better readability
-(global-visual-line-mode 1)
+;; Visuals, no custom theme loaded
+(set-background-color "black")             ; Set background color to black
+(set-foreground-color "white")             ; Set foreground color to white
+(global-hl-line-mode 1)                    ; Enable hl-line.el
+(set-face-foreground 'highlight nil)       ; Keep foreground color
+(set-cursor-color "DeepPink")              ; Cursor color
+(set-face-background `hl-line              ; Current line color
+		     "MidnightBlue")
 
-;; ============
-;;   Editing
-;; ============
-;; Disable insert key crap
-(global-unset-key(kbd"<insert>"))
-;; Allow copy/paste with system clipboard
-(setq x-select-enable-cliptbaord t)
-;; highlight line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "midnight blue")
-;; Enable selection highlight w/ C-SPC
-(setq transient-mark-mode t)
-;; Disable bell
-(setq ring-bell-function 'ignore)
-;; No backups or auto-saves
-(setq backup-inhibited t
-      make-backup-files nil
-      auto-save-default nil)
-;; Add newline at end of file if not there
-(setq require-final-newline t)
-;; Delete what is selected when typing
-(delete-selection-mode 1)
-;; neotree
-(add-to-list 'load-path "/some/path/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme (if (display-graphic-p) 'ascci))
+;; Custom splash screen image
+(setq fancy-splash-image "~/splash.jpg")
+
+;; function to relod config
+(defun reload-config ()
+  (interactive)
+  (load-file (concat user-emacs-directory "~/.emacs")))
 

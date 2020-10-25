@@ -49,3 +49,5 @@
   (interactive)
   (load-file (concat user-emacs-directory "~/.emacs")))
 
+;; Custom keybinds
+(global-unset-key (kbd "<insert>"))

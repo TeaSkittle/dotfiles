@@ -1,7 +1,6 @@
-; init.el
-; No external packages, just base emacs and elisp
+;;; No external packages, just base emacs and elisp
 
-; Useful defaults
+;;; Useful defaults
 (setq initial-scratch-message "")           ; Make *scratch* buffer blank
 (setq-default frame-title-format '("%b"))   ; Make window title the buffer name
 (setq ring-bell-function 'ignore)           ; Disable bell sound
@@ -20,12 +19,15 @@
 (global-set-key [mouse-3]                  
 		'mouse-popup-menubar-stuff) ; Gives right-click a context menu 
 (add-hook 'prog-mode-hook                   
-	 (if (and (fboundp 'display-line-numbers-mode)
-		  (display-graphic-p))
-	     #'display-line-numbers-mode
-	   #'linum-mode))                   ; Show line numbers in programming modes
+	  (if (and (fboundp 'display-line-numbers-mode)
+		   (display-graphic-p))
+	      #'display-line-numbers-mode
+	    #'linum-mode))                  ; Show line numbers in programming modes
 (setq gc-cons-threshold 402653184
       gc-cons-percentage 0.6)               ; Make emacs startup faster
+(setq read-process-output-max (* 1024 1024)); 1mb
+(setq-default tab-width 4
+              indent-tabs-mode nil)         ; Set tab to 4 spaces
 
 ; Visuals, no custom theme loaded
 (set-background-color "black")              ; Set background color to black
@@ -34,7 +36,7 @@
 (set-face-foreground 'highlight nil)        ; Keep foreground color
 (set-cursor-color "DeepPink")               ; Cursor color
 (set-face-background `hl-line              
-		    "MidnightBlue")         ; Current line color
+		     "MidnightBlue")        ; Current line color
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))                     ; Disable toolbar
 
@@ -49,3 +51,9 @@
 (global-set-key [?\C-x ?h] 'help-command)       ; Change help to C-x h
 (global-set-key (kbd "C-S-h")
 		'backward-kill-word)            ; Delete backwards word
+
+;; Load other elisp files
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "pkg.el")
+(setq custom-file "~/.emacs.d/lisp/custom.el")
+(load custom-file)

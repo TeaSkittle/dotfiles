@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Mouse settings
+xset m 0/10 0
+
+# Fix ubuntu audio bug
+killall pulseaudio; rm -r ~/.config/pulse/*
+
+# Set caps to control
+setxkbmap -option ctrl:nocaps &
+
+# start background apps
+dropbox start -i &
+feh --bg-fill --randomize ~/Dropbox/Pictures/Wallpapers/* &

@@ -14,8 +14,7 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(eval-when-compile
-  (require 'use-package))
+(eval-when-compile (require 'use-package))
 (setq use-package-always-ensure t)
 
 ;; Activate all the packages
@@ -25,15 +24,12 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; Function to download all packages, doesn't force them on user
+;; Function to download all packages
 (defun download-packages ()
   (interactive)
   (dolist (package package-list)
     (unless (package-installed-p package)
       (package-install package))))
-
-;; Eanble certain packages at start
-(rainbow-delimiters-mode)
 
 ;; List of packages
 (setq package-list

@@ -6,6 +6,7 @@ alias rb="rm *~"
 alias lock="i3lock -c 000000 -n"
 alias em="emacs -nw"
 alias cls="clear"
+alias masscp="rsync -ah --progress"
 
 # Functions
 function cheat 

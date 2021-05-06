@@ -40,7 +40,14 @@
 (set-background-color "#062329")
 (set-foreground-color "#ffffff")
 (set-face-background `hl-line "#0b3335")
-(set-cursor-color "DeepPink")               ; Cursor color
+(set-cursor-color "DeepPink")
+;; Modeline
+(set-face-attribute 'mode-line nil
+                    :background "#eee8d5"
+                    :foreground "#072d40")
+(set-face-attribute 'mode-line-inactive nil
+                    :background "#fdf6e3"
+                    :foreground "#93a1a1")
 
 ;; Custom functions
 (defun reload-config ()

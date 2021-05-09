@@ -59,7 +59,10 @@
 
 ;; Load other elisp files
 (add-to-list 'load-path "~/.emacs.d/lisp")
-(setq custom-file "~/.emacs.d/lisp/custom.el")
-(load "pkg.el")
+(setq custom-file "~/.emacs.d/lisp/dump.el")
 (load custom-file)
+(load "pkg.el")
+
+;; Spectrwm fix
+(setq frame-resize-pixelwise t)
 

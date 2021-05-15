@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-# Stuff to run at startup
-xset m 0/10 0
+xset m 0/10 0 &
+xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1 &
 dropbox start -i &
 feh --bg-fill --randomize ~/Dropbox/Pictures/Wallpapers/* &
+redshift -l 37.758072:-113.055321 -m randr -v &

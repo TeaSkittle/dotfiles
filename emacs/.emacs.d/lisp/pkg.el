@@ -1,7 +1,10 @@
 ;;; pkg.el
 ;;; Set up and install external packages seperately from init.el
-;;;
-;;; List of packages is at the end of this file
+
+;; List of packages
+(setq package-list
+      '(rainbow-delimiters fish-mode d-mode markdown-mode
+                           monokai-theme dashboard))
 
 ;; Setup package.el
 (require 'package)
@@ -20,18 +23,25 @@
 ;; Activate all the packages
 (package-initialize)
 
-;; fetch the list of packages available 
+;; Fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; Function to download all packages
-(defun download-packages ()
+;; Install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Function to download all packages in package-list
+;; may end up removing
+(defun download-packages()
   (interactive)
   (dolist (package package-list)
     (unless (package-installed-p package)
       (package-install package))))
 
-;; List of packages
-(setq package-list
-      '(rainbow-delimiters fish-mode d-mode markdown-mode))
-
+;; Dashboard, will end up moving to another file
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-banner-logo-title "Welcome to Ghost Emacs")
+(setq dashboard-startup-banner "~/.emacs.d/lisp/logo.png")

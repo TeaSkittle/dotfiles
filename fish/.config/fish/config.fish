@@ -1,5 +1,8 @@
 # Fish Config
 
+# Disable fish greeting
+set fish_greeting
+
 # Aliases
 alias clock="date +'%Y-%m-%d %H:%M:%S'"
 alias rb="rm *~"

@@ -1,15 +1,4 @@
-#!/bin/sh
-#
-
-# Mouse setting
+#!/usr/bin/sh
 xset m 0/10 0 &
 xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1 &
-
-# Visuals( Will be moving to openbox autostart file )
-#feh --bg-fill --randomize ~/Dropbox/Pictures/Wallpapers/* &
-#redshift -l 37.758072:-113.055321 -m randr -v &
-#tint2&
-
-# Background apps
-dropbox start -i &
-#conky -q &
+pcloud &

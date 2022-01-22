@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-# ouse Settings
+# Mouse Settings
 xset m 0/10 0 &
 xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1 &
 

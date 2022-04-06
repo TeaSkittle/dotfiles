@@ -6,3 +6,11 @@ HIGHLIGHT = 1;
 ADD_NEWLINE = 1;
 IGNORE_BEEP = 2; % visible error only, no sound
 map_input (8, 127); % Fix backspace key
+
+% Colors, more here:
+% https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=135080
+set_color ("status","black","white");
+set_color ("menu","black","white");
+set_color ("menu_char","blue","white");
+set_color ("region","yellow","blue");
+set_color ("comment","green","white");

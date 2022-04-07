@@ -29,7 +29,7 @@ function "lscr"
     ls ~/.scripts/
 end
 
-function xlist
+function xlist -d "List executable files"
     set_color green
     tput bold
     ls -al | grep -Ei '^[rwx-]{9}x' | awk '{print $9}'

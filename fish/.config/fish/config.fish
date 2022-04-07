@@ -14,7 +14,7 @@ alias rb="rm *~"
 alias cls="clear"
 alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
-
+alias reload="source ~/.config/fish/config.fish"
 
 # Function
 function xlist

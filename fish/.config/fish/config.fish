@@ -11,24 +11,10 @@ end
 # Aliases
 alias clock="date +'%Y-%m-%d %H:%M:%S'"
 alias rb="rm *~"
-alias lock="i3lock -c 000000 -n"
-alias em="emacs -nw"
 alias cls="clear"
 alias masscp="rsync -ah --progress"
 
 # Functions
-function cheat 
-    curl -s cheat.sh/$argv
-end
-
-function scr 
-    ~/.scripts/$argv[1] $argv[2]
-end
-
-function "lscr" 
-    ls ~/.scripts/
-end
-
 function xlist -d "List executable files"
     set_color green
     tput bold

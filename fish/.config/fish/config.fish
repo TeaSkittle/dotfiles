@@ -15,6 +15,8 @@ alias cls="clear"
 alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
 
+
+# Function
 function xlist
     ls -al | grep -Ei '^[rwx-]{9}x' | awk '{print $9}' | tail -n +2
 end

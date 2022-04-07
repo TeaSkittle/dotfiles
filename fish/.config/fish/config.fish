@@ -14,13 +14,4 @@ alias rb="rm *~"
 alias cls="clear"
 alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
-
-# Functions
-function xlist -d "List executable files"
-    set_color green
-    tput bold
-    ls -al | grep -Ei '^[rwx-]{9}x' | awk '{print $9}'
-    tput sgr0
-    set_color normal
-end
-
+alias xlist="ls -al | grep -Ei '^[rwx-]{9}x' | awk '{print $9}' | tail -n +2"

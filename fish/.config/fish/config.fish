@@ -13,6 +13,7 @@ alias clock="date +'%Y-%m-%d %H:%M:%S'"
 alias rb="rm *~"
 alias cls="clear"
 alias masscp="rsync -ah --progress"
+alias cisco="sudo screen /dev/ttyUSB0"
 
 # Functions
 function xlist -d "List executable files"

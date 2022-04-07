@@ -1,5 +1,3 @@
-# Fish Config
-
 # Disable fish greeting
 set fish_greeting
 

@@ -13,8 +13,9 @@ alias cls="clear"
 alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
 alias reload="source ~/.config/fish/config.fish"
+alias em="emacsclient -a ''"
 
-# Function
-function xlist
-    ls -al | grep -Ei '^[rwx-]{9}x' | awk '{print $9}' | tail -n +2
+# Functions
+function kp -d "Stop PackageKit on OpenSUSE"
+    sudo systemctl stop packagekit.service
 end

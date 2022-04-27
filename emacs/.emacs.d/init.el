@@ -1,85 +1,40 @@
-;;; Slightly modified version of: Emfy 0.2.0 <https://github.com/susam/emfy>
+;;; Personal configuration -*- lexical-binding: t -*-
+;;; Based off of:
+;;;  https://github.com/susam/emfy
+;;;  https://emacs.amodernist.com/
 
-;; Customize user interface.
-(menu-bar-mode 0)
-(when (display-graphic-p)
-  (tool-bar-mode 0)
-  (scroll-bar-mode 0))
+;; Add the NonGNU ELPA package archive
+(require 'package)
+(add-to-list 'package-archives  '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
+
+;; Install packages.
+(dolist (package '(markdown-mode rainbow-delimiters racket-mode))
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; Load a custom theme
+(load-theme 'wombat t)
+
+;; Disable the tool bar
+(tool-bar-mode -1)
+
+;; Disable splash screen
 (setq inhibit-startup-screen t)
+
+;; Enable line numbering by default
+(global-display-line-numbers-mode t)
+
+;; Enable column number in mode-line
 (column-number-mode)
 
-;; Dark theme.
-(load-theme 'wombat)
-(set-face-background 'default "#111")
-(set-face-background 'cursor "#c96")
-(set-face-background 'isearch "#c60")
-(set-face-foreground 'isearch "#eee")
-(set-face-background 'lazy-highlight "#960")
-(set-face-foreground 'lazy-highlight "#ccc")
-(set-face-foreground 'font-lock-comment-face "#fc0")
-
-;; Interactively do things.
+;; Ido Mode auto-completion
 (ido-mode 1)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
-; May keep, not sure:
-;(fido-mode)
-
-;; Show stray whitespace.
-(setq-default show-trailing-whitespace t)
-(setq-default indicate-empty-lines t)
-(setq-default indicate-buffer-boundaries 'left)
-
-;; Consider a period followed by a single space to be end of sentence.
-(setq sentence-end-double-space nil)
-
-;; Use spaces, not tabs, for indentation.
-(setq-default indent-tabs-mode nil)
-
-;; Display the distance between two tab stops as 4 characters wide.
-(setq-default tab-width 4)
 
 ;; Highlight matching pairs of parentheses.
 (setq show-paren-delay 0)
 (show-paren-mode)
-
-;; Write auto-saves and backups to separate directory.
-(make-directory "~/.tmp/emacs/auto-save/" t)
-(setq auto-save-file-name-transforms '((".*" "~/.tmp/emacs/auto-save/" t)))
-(setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
-
-;; Do not move the current file while creating backup.
-(setq backup-by-copying t)
-
-;; Disable lockfiles.
-(setq create-lockfiles nil)
-
-;; Workaround for https://debbugs.gnu.org/34341 in GNU Emacs <= 26.3.
-(when (and (version< emacs-version "26.3") (>= libgnutls-version 30603))
-  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
-
-;; Write customizations to a separate file instead of this file.
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file t)
-
-;; Enable installation of packages from MELPA.
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Install packages.
-(dolist (package '(markdown-mode paredit rainbow-delimiters leuven-theme racket-mode))
-  (unless (package-installed-p package)
-    (package-install package)))
-
-;; Enable Rainbow Delimiters.
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'ielm-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-interaction-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'racket-mode-hook 'rainbow-delimiters-mode)
 
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
@@ -96,19 +51,27 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
-;; Custom command.
-(defun show-current-time ()
-  "Show current time."
-  (interactive)
-  (message (current-time-string)))
+;; Write auto-saves and backups to separate directory.
+(make-directory "~/.tmp/emacs/auto-save/" t)
+(setq auto-save-file-name-transforms '((".*" "~/.tmp/emacs/auto-save/" t)))
+(setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
 
+;; Miscellaneous options
+(setq-default major-mode
+              (lambda () ; guess major mode from file name
+                (unless buffer-file-name
+                  (let ((buffer-file-name (buffer-name)))
+                    (set-auto-mode)))))
+(setq window-resize-pixelwise t)
+(setq frame-resize-pixelwise t)
+(savehist-mode t)
+(recentf-mode t)
+(defalias 'yes-or-no #'y-or-n-p)
 
-;; Custom key sequences.
-(global-set-key (kbd "C-c t") 'show-current-time)
-(global-set-key (kbd "C-c d") 'delete-trailing-whitespace)
-
-(global-display-line-numbers-mode 't)
-(require 'rainbow-delimiters)
+;; Store automatic customisation options elsewhere
+(setq custom-file (locate-user-emacs-file "custom.el"))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 ;; Start server.
 (require 'server)

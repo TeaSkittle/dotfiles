@@ -21,6 +21,9 @@
 ;; Disable splash screen
 (setq inhibit-startup-screen t)
 
+;; Unbind Isnert Key
+(define-key global-map [(insert)] nil)
+
 ;; Enable line numbering by default
 (global-display-line-numbers-mode t)
 

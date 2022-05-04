@@ -50,7 +50,7 @@
 (setq show-paren-delay 0)
 (show-paren-mode)
 
-;; Customize Rainbow Delimiters.
+;; Customize Rainbow Delimiters
 (require 'rainbow-delimiters)
 
 ;; Customize Rainbow Delimiters.
@@ -65,7 +65,7 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
-;; Write auto-saves and backups to separate directory.
+;; Write auto-saves and backups to separate directory
 (make-directory "~/.tmp/emacs/auto-save/" t)
 (setq auto-save-file-name-transforms '((".*" "~/.tmp/emacs/auto-save/" t)))
 (setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
@@ -88,12 +88,12 @@
 (setq auto-save-default nil)       ; Stop creating #autosave# files
 (setq gc-cons-threshold 100000000) ; Garbage collection
 
-;; Store automatic customisation options elsewhere
+;; Store automatic customization options elsewhere
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
 
-;; Start server.
+;; Start server
 (require 'server)
 (unless (server-running-p)
   (server-start))

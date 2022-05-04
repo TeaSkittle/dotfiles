@@ -65,9 +65,8 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
-;; Write auto-saves and backups to separate directory
+;; Write backups to separate directory
 (make-directory "~/.tmp/emacs/auto-save/" t)
-(setq auto-save-file-name-transforms '((".*" "~/.tmp/emacs/auto-save/" t)))
 (setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
 
 ;; Miscellaneous options

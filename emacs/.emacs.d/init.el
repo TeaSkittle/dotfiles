@@ -65,9 +65,9 @@
 (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
 (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
-;; Write backups to separate directory
-(make-directory "~/.tmp/emacs/auto-save/" t)
-(setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
+;; Visual adjustments
+(setq window-resize-pixelwise t)
+(setq frame-resize-pixelwise t) 
 
 ;; Miscellaneous options
 (setq-default major-mode
@@ -75,10 +75,8 @@
                 (unless buffer-file-name
                   (let ((buffer-file-name (buffer-name)))
                     (set-auto-mode)))))
-(setq window-resize-pixelwise t)
-(setq frame-resize-pixelwise t)
-(savehist-mode t)
-(recentf-mode t)
+(savehist-mode t)                  ; Save minibuffer history over several sessions
+(recentf-mode t)                   ; Builds a list of recently opened files
 (defalias 'yes-or-no #'y-or-n-p)   ; y-or-n-p makes answering questions faster
 (setq ring-bell-function 'ignore)  ; Disable bell sound
 (setq require-final-newline t)     ; Add newline at end of file if not there
@@ -86,6 +84,11 @@
 (delete-selection-mode 1)          ; Delete what is selected when typing
 (setq auto-save-default nil)       ; Stop creating #autosave# files
 (setq gc-cons-threshold 100000000) ; Garbage collection
+
+;; Write backups and savehist to separate directory
+(make-directory "~/.tmp/emacs/auto-save/" t)
+(setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
+(setq savehist-file "~/.emacs.d/tmp/savehist")
 
 ;; Store automatic customization options elsewhere
 (setq custom-file (locate-user-emacs-file "custom.el"))

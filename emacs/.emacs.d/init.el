@@ -15,6 +15,9 @@
 ;; Load a custom theme
 (load-theme 'wombat t)
 
+;; Custom cursor color
+(set-cursor-color "DeepPink")
+
 ;; Disable the tool bar
 (tool-bar-mode -1)
 
@@ -81,7 +84,6 @@
 (setq ring-bell-function 'ignore)  ; Disable bell sound
 (setq require-final-newline t)     ; Add newline at end of file if not there
 (delete-selection-mode 1)          ; Delete what is selected when typing
-(set-cursor-color "DeepPink")      ; Cursor color
 (delete-selection-mode 1)          ; Delete what is selected when typing
 (setq auto-save-default nil)       ; Stop creating #autosave# files
 (setq gc-cons-threshold 100000000) ; Garbage collection

@@ -86,9 +86,9 @@
 (setq gc-cons-threshold 100000000) ; Garbage collection
 
 ;; Write backups and savehist to separate directory
-(make-directory "~/.tmp/emacs/auto-save/" t)
-(setq backup-directory-alist '(("." . "~/.tmp/emacs/backup/")))
-(setq savehist-file "~/.emacs.d/tmp/savehist")
+(make-directory "/tmp/emacs/auto-save/" t)
+(setq backup-directory-alist '(("." . "/tmp/emacs/backup/")))
+(setq savehist-file "~/.emacs.d/savehist")
 
 ;; Store automatic customization options elsewhere
 (setq custom-file (locate-user-emacs-file "custom.el"))

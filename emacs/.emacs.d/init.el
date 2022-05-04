@@ -8,7 +8,7 @@
 (add-to-list 'package-archives  '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 
 ;; Install packages.
-(dolist (package '(markdown-mode rainbow-delimiters racket-mode))
+(dolist (package '(markdown-mode rainbow-delimiters racket-mode mood-line))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -23,6 +23,10 @@
 
 ;; Disable splash screen
 (setq inhibit-startup-screen t)
+
+;; Mood-line
+(require 'mood-line)
+(mood-line-mode)
 
 ;; Unbind Isnert Key
 (define-key global-map [(insert)] nil)

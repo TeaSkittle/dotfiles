@@ -39,8 +39,16 @@
 (setq show-paren-delay 0)
 (show-paren-mode)
 
+;; Tab to 4 Space
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq tab-width 4)
+
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
+
+;; Gives right-click a context menu
+(global-set-key [mouse-3] 'mouse-popup-menubar-stuff)
 
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
@@ -70,6 +78,13 @@
 (savehist-mode t)
 (recentf-mode t)
 (defalias 'yes-or-no #'y-or-n-p)
+(setq ring-bell-function 'ignore)  ; Disable bell sound
+(setq require-final-newline t)     ; Add newline at end of file if not there
+(delete-selection-mode 1)          ; Delete what is selected when typing
+(set-cursor-color "DeepPink")      ; Cursor color
+(delete-selection-mode 1)          ; Delete what is selected when typing
+(setq auto-save-default nil)       ; Stop creating #autosave# files
+(setq gc-cons-threshold 100000000) ; Garbage collection
 
 ;; Store automatic customisation options elsewhere
 (setq custom-file (locate-user-emacs-file "custom.el"))

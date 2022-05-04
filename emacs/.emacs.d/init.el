@@ -24,6 +24,14 @@
 ;; Unbind Isnert Key
 (define-key global-map [(insert)] nil)
 
+;; Tab to 4 Space
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq tab-width 4)
+
+;; Gives right-click a context menu
+(global-set-key [mouse-3] 'mouse-popup-menubar-stuff)
+
 ;; Enable line numbering by default
 (global-display-line-numbers-mode t)
 
@@ -39,16 +47,8 @@
 (setq show-paren-delay 0)
 (show-paren-mode)
 
-;; Tab to 4 Space
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq tab-width 4)
-
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
-
-;; Gives right-click a context menu
-(global-set-key [mouse-3] 'mouse-popup-menubar-stuff)
 
 ;; Customize Rainbow Delimiters.
 (require 'rainbow-delimiters)
@@ -77,7 +77,7 @@
 (setq frame-resize-pixelwise t)
 (savehist-mode t)
 (recentf-mode t)
-(defalias 'yes-or-no #'y-or-n-p)
+(defalias 'yes-or-no #'y-or-n-p)   ; y-or-n-p makes answering questions faster
 (setq ring-bell-function 'ignore)  ; Disable bell sound
 (setq require-final-newline t)     ; Add newline at end of file if not there
 (delete-selection-mode 1)          ; Delete what is selected when typing

@@ -4,7 +4,16 @@
 ;; Packages
 ;; ====================
 (require 'package)
-(add-to-list 'package-archives  '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(unless package--initialized (package-initialize))
+
+;; Fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Install Packages
 (dolist (package '(markdown-mode rainbow-delimiters racket-mode mood-line))
   (unless (package-installed-p package)
     (package-install package)))

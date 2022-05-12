@@ -11,4 +11,4 @@ git clone https://github.com/teaskittle/dotfiles
 cd dotfiles/
 chmod 775 setup.sh
 sudo ./setup.sh
-``
+```

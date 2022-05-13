@@ -8,8 +8,13 @@ git clone https://github.com/TeaSkittle/dotfiles
 
 echo "[+] Copying files..."
 cd dotfiles/
+# X11
 mv X11/.xprofile ~/.xprofile
+# Emacs
+mkdir ~/.emacs.d/
 mv emacs/.emacs.d/init.el ~/.emacs.d/init.el 
+# Fish
+mkdir ~/.config/fish/
 mv fish/.config/fish/config.fish ~/.config/fish/config.fish 
 
 echo "[+] Cleaning up files..."

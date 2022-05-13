@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-# Packages
 echo "[+] Installing packages..."
 sudo apt-get install -y git net-tools tldr emacs fish neofetch racket
 
@@ -13,7 +12,6 @@ mv X11/.xprofile ~/.xprofile
 mv emacs/.emacs.d/init.el ~/.emacs.d/init.el 
 mv fish/.config/fish/config.fish ~/.config/fish/config.fish 
 
-# Finish & Clean up
 echo "[+] Cleaning up files..."
 cd ../
 rm -rf dotfiles/

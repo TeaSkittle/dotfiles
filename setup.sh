@@ -2,7 +2,7 @@
 
 # Packages
 echo "[+] Installing system packages..."
-sudo apt-get install -y git net-tools tldr emacs fish neofetch
+sudo apt-get install -y git net-tools tldr emacs fish neofetch racket
 
 echo "[+] Downloading repo..."
 git clone https://github.com/TeaSkittle/dotfiles

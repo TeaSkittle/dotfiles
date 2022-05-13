@@ -6,7 +6,7 @@ sudo apt-get install -y git net-tools tldr emacs fish neofetch racket
 echo "[+] Downloading repo..."
 git clone https://github.com/TeaSkittle/dotfiles
 
-echo "[+] Copying files..."
+echo "[+] Moving files..."
 cd dotfiles/
 # X11
 mv X11/.xprofile ~/.xprofile

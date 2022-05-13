@@ -16,5 +16,6 @@ cp fish/.config/fish/config.fish ~/.config/fish/config.fish
 # Print fish command
 f=$(command -v fish | sudo tee -a /etc/shells)
 echo "[!] To change shell to fish: chsh -s $f"
-
+echo ""
 echo "[+] Set up complete"
+echo ""

@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Packages
-echo "[+] Installing system packages..."
+echo "[+] Installing packages..."
 sudo apt-get install -y git net-tools tldr emacs fish neofetch racket
 
 echo "[+] Downloading repo..."

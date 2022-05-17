@@ -13,8 +13,7 @@ alias cls="clear"
 alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
 alias reload="source ~/.config/fish/config.fish"
-#alias em="emacsclient -a ''"
-alias em="emacsclient -nc"
+alias em="emacs -nw"
 
 # Functions
 function kp -d "Stop PackageKit on OpenSUSE"

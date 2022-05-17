@@ -93,10 +93,3 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
-
-;; ====================
-;; Server
-;; ====================
-(require 'server)
-(unless (server-running-p)
-  (server-start))

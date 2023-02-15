@@ -59,7 +59,6 @@
 ;; Functionality
 ;; ====================
 (define-key global-map [(insert)] nil)                ; Unbind insert Key
-(global-set-key [mouse-3] 'mouse-popup-menubar-stuff) ; Gives right-click a context menu
 
 ;; Tab to 4 Space
 (setq-default indent-tabs-mode nil)
@@ -78,8 +77,8 @@
 (delete-selection-mode 1)          ; Delete what is selected when typing
 (setq auto-save-default nil)       ; Stop creating #autosave# files
 (setq gc-cons-threshold 100000000) ; Garbage collection
-(setq-default major-mode
-              (lambda () ; guess major mode from file name
+(setq-default major-mode           ; Guess the major mode from file name
+              (lambda () 
                 (unless buffer-file-name
                   (let ((buffer-file-name (buffer-name)))
                     (set-auto-mode)))))

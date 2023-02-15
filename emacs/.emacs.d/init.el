@@ -58,7 +58,7 @@
 ;; ====================
 ;; Functionality
 ;; ====================
-(define-key global-map [(insert)] nil)                ; Unbind Isnert Key
+(define-key global-map [(insert)] nil)                ; Unbind insert Key
 (global-set-key [mouse-3] 'mouse-popup-menubar-stuff) ; Gives right-click a context menu
 
 ;; Tab to 4 Space

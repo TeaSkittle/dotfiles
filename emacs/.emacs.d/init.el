@@ -59,8 +59,6 @@
 ;; Functionality
 ;; ====================
 (define-key global-map [(insert)] nil)                ; Unbind insert Key
-
-;; Tab to 4 Space
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
@@ -92,3 +90,13 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (when (file-exists-p custom-file)
   (load custom-file))
+
+;; ====================
+;; Custom Functions
+;; ====================
+
+(defun init()
+  (interactive)
+  "Open emacs init file"
+  (find-file "~/.emacs.d/init.el"))
+  

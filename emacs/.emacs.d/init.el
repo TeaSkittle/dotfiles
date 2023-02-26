@@ -33,7 +33,7 @@
 ;; ====================
 ;; Visuals
 ;; ====================
-(load-theme 'wombat t)               ; Load a custom theme
+;(load-theme 'wombat t)               ; Load a custom theme
 (set-cursor-color "DeepPink")        ; Custom cursor color
 (tool-bar-mode -1)                   ; Disable the tool bar
 (setq inhibit-startup-screen t)      ; Disable splash screen
@@ -43,6 +43,8 @@
 (global-visual-line-mode 1)          ; Enable line wrapping
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
+(set-background-color "honeydew")
+(set-frame-font "DejaVu Sans Mono-10")
 
 ;; Customize Rainbow Delimiters
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red

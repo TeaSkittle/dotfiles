@@ -14,7 +14,7 @@
   (package-refresh-contents))
 
 ;; Install Packages
-(dolist (package '(markdown-mode rainbow-delimiters racket-mode mood-line))
+(dolist (package '(markdown-mode rainbow-delimiters racket-mode))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -26,14 +26,10 @@
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 
-;; Mood-line
-(require 'mood-line)
-(mood-line-mode)
-
 ;; ====================
 ;; Visuals
 ;; ====================
-;(load-theme 'wombat t)               ; Load a custom theme
+(set-background-color "honeydew")    ; Custom background color
 (set-cursor-color "DeepPink")        ; Custom cursor color
 (tool-bar-mode -1)                   ; Disable the tool bar
 (setq inhibit-startup-screen t)      ; Disable splash screen
@@ -43,8 +39,6 @@
 (global-visual-line-mode 1)          ; Enable line wrapping
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
-(set-background-color "honeydew")
-(set-frame-font "DejaVu Sans Mono-10")
 
 ;; Customize Rainbow Delimiters
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
@@ -60,7 +54,7 @@
 ;; ====================
 ;; Functionality
 ;; ====================
-(define-key global-map [(insert)] nil)                ; Unbind insert Key
+(define-key global-map [(insert)] nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
@@ -73,7 +67,6 @@
 (defalias 'yes-or-no #'y-or-n-p)   ; y-or-n-p makes answering questions faster
 (setq ring-bell-function 'ignore)  ; Disable bell sound
 (setq require-final-newline t)     ; Add newline at end of file if not there
-(delete-selection-mode 1)          ; Delete what is selected when typing
 (delete-selection-mode 1)          ; Delete what is selected when typing
 (setq auto-save-default nil)       ; Stop creating #autosave# files
 (setq gc-cons-threshold 100000000) ; Garbage collection

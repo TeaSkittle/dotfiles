@@ -37,6 +37,7 @@
 (setq show-paren-delay 0)            ; Paren match delay = 0
 (global-display-line-numbers-mode t) ; Enable line numbering by default
 (global-visual-line-mode 1)          ; Enable line wrapping
+(global-hl-line-mode 1)              ; Highlight current line
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
 

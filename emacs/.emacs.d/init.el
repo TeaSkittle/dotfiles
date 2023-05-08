@@ -31,13 +31,13 @@
 ;; ====================
 (set-background-color "honeydew")    ; Custom background color
 (set-cursor-color "DeepPink")        ; Custom cursor color
+(global-hl-line-mode 1)              ; Highlight current line
 (tool-bar-mode -1)                   ; Disable the tool bar
 (setq inhibit-startup-screen t)      ; Disable splash screen
 (show-paren-mode)                    ; Show matching parens
 (setq show-paren-delay 0)            ; Paren match delay = 0
-(global-display-line-numbers-mode t) ; Enable line numbering by default
+(global-linum-mode t)                ; Enable line numbering by default
 (global-visual-line-mode 1)          ; Enable line wrapping
-(global-hl-line-mode 1)              ; Highlight current line
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
 
@@ -55,8 +55,8 @@
 ;; ====================
 ;; Functionality
 ;; ====================
-(define-key global-map [(insert)] nil)
-(setq-default indent-tabs-mode nil)
+(define-key global-map [(insert)] nil) ; Unbind Isnert Key
+(setq-default indent-tabs-mode nil)    ; Gives right-click a context menu
 (setq-default tab-width 4)
 (setq tab-width 4)
 
@@ -65,7 +65,7 @@
 ;; ====================
 (savehist-mode t)                  ; Save minibuffer history over several sessions
 (recentf-mode t)                   ; Builds a list of recently opened files
-(defalias 'yes-or-no #'y-or-n-p)   ; y-or-n-p makes answering questions faster
+(defalias 'yes-or-no #'y-or-n-p)   ; yes-or-no -> y-or-n
 (setq ring-bell-function 'ignore)  ; Disable bell sound
 (setq require-final-newline t)     ; Add newline at end of file if not there
 (delete-selection-mode 1)          ; Delete what is selected when typing
@@ -88,11 +88,20 @@
   (load custom-file))
 
 ;; ====================
+;; org-mode
+;; ====================
+(add-hook 'org-mode-hook 'end-of-buffer)             ; Jump to end of file
+(add-hook 'org-mode-hook (lambda () (linum-mode 0))) ; Disable line numbers in org-mode
+
+;; ====================
 ;; Custom Functions
 ;; ====================
-
 (defun init()
-  (interactive)
   "Open emacs init file"
+  (interactive)
   (find-file "~/.emacs.d/init.el"))
   
+(defun td()
+  "Open todo.org"
+  (interactive)
+  (find-file "C:\\Users\\tdowd\\\OneDrive - Paiute Indian Tribe of Utah\\Documents\\todo.org"))

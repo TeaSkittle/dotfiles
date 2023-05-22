@@ -56,7 +56,7 @@
 ;; Functionality
 ;; ====================
 (define-key global-map [(insert)] nil) ; Unbind Insert Key
-(setq-default indent-tabs-mode nil)    ; Gives right-click a context menu
+(setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq tab-width 4)
 

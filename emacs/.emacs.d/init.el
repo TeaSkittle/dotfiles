@@ -104,4 +104,4 @@
 (defun td()
   "Open todo.org"
   (interactive)
-  (find-file "C:\\Users\\tdowd\\\OneDrive - Paiute Indian Tribe of Utah\\Documents\\todo.org"))
+  (find-file "~/Documents/todo.org"))

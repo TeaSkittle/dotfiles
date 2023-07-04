@@ -14,8 +14,18 @@ alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
 alias reload="source ~/.config/fish/config.fish"
 alias em="emacs -nw"
+alias xlist="ls -al | grep -Ei '^[rwx-]{9}x' | cut -c 48-"
+alias sx="startx"
 
 # Functions
 function kp -d "Stop PackageKit on OpenSUSE"
     sudo systemctl stop packagekit.service
+end
+
+function owncat -d "Neatly print out file permissions"
+    echo -n "Owner: "; ls -l $argv | awk '{print $3}'
+    echo -n "Group: "; ls -l $argv | awk '{print $4}'
+    echo -n "r/w/x: "; ls -l $argv | awk '{print $1}' | sed 's/#\\.//'
+        #echo "Octal: "; stat -c '%a %n' $argv | awk '{print $1}'
+        #^ Freebsd issue with stat commmand
 end

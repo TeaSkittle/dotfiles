@@ -4,5 +4,5 @@
 xset m 0/10 0 &
 xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1 &
 
-# Cloud Storage
-pcloud &
+# powerline adapter fix
+ping -i 5 192.168.40.1 &

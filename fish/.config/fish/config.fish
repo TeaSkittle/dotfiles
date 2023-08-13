@@ -14,7 +14,7 @@ alias masscp="rsync -ah --progress"
 alias cisco="sudo screen /dev/ttyUSB0"
 alias reload="source ~/.config/fish/config.fish"
 alias em="emacs -nw"
-alias xlist="ls -al | grep -Ei '^[rwx-]{9}x' | cut -c 48-"
+alias xlist="ls -al | grep -Ei '^[rwx-]{9}x' | cut -c 43-"
 alias sx="startx"
 
 # Functions

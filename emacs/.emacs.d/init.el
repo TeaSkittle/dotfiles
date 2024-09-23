@@ -36,7 +36,7 @@
 (setq inhibit-startup-screen t)      ; Disable splash screen
 (show-paren-mode)                    ; Show matching parens
 (setq show-paren-delay 0)            ; Paren match delay = 0
-(global-linum-mode t)                ; Enable line numbering by default
+(global-display-line-numbers-mode 1) ; Enable line numbering by default
 (global-visual-line-mode 1)          ; Enable line wrapping
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
@@ -90,8 +90,8 @@
 ;; ====================
 ;; org-mode
 ;; ====================
-(add-hook 'org-mode-hook 'end-of-buffer)             ; Jump to end of file
-(add-hook 'org-mode-hook (lambda () (linum-mode 0))) ; Disable line numbers in org-mode
+(add-hook 'org-mode-hook 'end-of-buffer)                       ; Jump to eof
+(add-hook 'org-mode-hook (global-display-line-numbers-mode 0)) ; no linums
 
 ;; ====================
 ;; Custom Functions

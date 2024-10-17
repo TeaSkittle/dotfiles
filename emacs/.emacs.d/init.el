@@ -14,7 +14,7 @@
   (package-refresh-contents))
 
 ;; Install Packages
-(dolist (package '(markdown-mode rainbow-delimiters racket-mode))
+(dolist (package '(rainbow-delimiters))
   (unless (package-installed-p package)
     (package-install package)))
 
@@ -38,6 +38,7 @@
 (setq show-paren-delay 0)            ; Paren match delay = 0
 (global-display-line-numbers-mode 1) ; Enable line numbering by default
 (global-visual-line-mode 1)          ; Enable line wrapping
+(column-number-mode)                 ; Show column number in the mode line
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t) 
 
@@ -105,3 +106,4 @@
   "Open todo.org"
   (interactive)
   (find-file "~/Documents/todo.org"))
+;;(find-file "C:/users/travis/Documents/todo.org"))
